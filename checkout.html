@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+ 
+</head>
+<body>
+  <header>
+      <title>Checkout - The Jersey Vault</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+   <div class="brand">
+    <img src="assets/img/logo.png" alt="Logo">
+    <h1>CHECKOUT</h1>
+    </div>
+   
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="cart.html">Cart</a>
+      <a href="checkout.html">Checkout</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="checkout-container">
+      <h2>Order Summary</h2>
+      <div id="checkout-summary"></div>
+
+      <h2>Customer Information</h2>
+      <form id="checkout-form" onsubmit="placeOrder(event)">
+        <input type="text" name="name" placeholder="Full Name" required />
+        <input type="email" name="email" placeholder="Email Address" required />
+        <textarea name="address" placeholder="Shipping Address" required></textarea>
+              <h2>Payment Information</h2>
+<div class="payment-section">
+  <input type="text" placeholder="Cardholder Name" required />
+  <input type="text" placeholder="Card Number" maxlength="19" required />
+  <div class="payment-row">
+    <input type="text" placeholder="MM/YY" maxlength="5" required />
+    <input type="text" placeholder="CVV" maxlength="4" required />
+  </div>
+        <button type="submit" class="btn">Place Order</button>
+      </form>
+
+</div>
+    </section>
+  </main>
+   <div class="center-wrapper">
+    <div><button onclick="logout()" class="btn">Logout</button></div>
+    
+
+<script>
+  function logout() {
+    localStorage.removeItem("jerseyUser");
+    alert("You’ve been logged out.");
+    window.location.href = "login.html";
+  }
+</script>
+  </div>
+
+
+  <footer>The Jersey Vault,2025.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

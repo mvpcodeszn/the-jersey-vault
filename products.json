@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Home Jersey",
+    "price": 40,
+    "category": "home",
+    "images": [
+      "assets/img/jersey1a.jpg",
+      "assets/img/jersey1b.jpg"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Away Jersey",
+    "price": 45,
+    "category": "away",
+    "images": [
+      "assets/img/jersey2a.jpg",
+      "assets/img/jersey2b.jpg"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Third Kit",
+    "price": 50,
+    "category": "third",
+    "images": [
+      "assets/img/jersey3a.jpg",
+      "assets/img/jersey3b.jpg"
+    ]
+  }
+]

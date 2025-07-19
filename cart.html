@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+</head>
+<body>
+  <header>
+      <title>Cart - The Jersey Vault</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
+    <div class="brand">
+    <img src="assets/img/logo.png" alt="Logo">
+    <h1>MY CART</h1>
+    </div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="cart.html">Cart</a>
+      <a href="checkout.html">Checkout</a>
+    </nav>
+   
+  </header>
+
+  <main>
+    <section class="cart-container">
+      <div id="cart-items"></div>
+      <div id="cart-total"></div>
+      <button onclick="clearCart()" class="btn">Clear Cart</button>
+    </section>
+  </main>
+
+  
+  <footer>
+    <p>&copy; The Jersey Vault,2025</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+  const user = localStorage.getItem("jerseyUser");
+  if (!user) {
+    alert("You must be logged in to access this page.");
+    window.location.href = "login.html";
+  }
+</script>
+
+</body>
+</html>

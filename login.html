@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <title>Login | The Jersey Vault</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="auth-wrapper">
+    <main class="auth">
+      <h2>Login</h2>
+      <form id="login-form">
+  <input type="email" placeholder="Email Address" name="email" required />
+  <input type="password" placeholder="Password" name="password" required />
+ <label class="remember-container">
+  <input type="checkbox" name="remember">
+  <span class="checkmark"></span>
+  Remember Me
+</label>
+  <div id="login-msg" style="font-size: 0.8rem; color: #c00;"></div>
+  <button type="submit" class="btn">Login</button>
+</form>
+      <p>Don't have an account? <a href="register.html">Register</a></p>
+    </main>
+  </div>
+
+<script>
+  document.getElementById("login-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const email = this.email.value.trim();
+    const password = this.password.value;
+    const remember = this.remember.checked;
+    const loginMsg = document.getElementById("login-msg");
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      loginMsg.textContent = "Please enter a valid email address.";
+      return;
+    }
+
+    if (password.length < 6) {
+      loginMsg.textContent = "Password must be at least 6 characters.";
+      return;
+    }
+
+    const user = {
+      email: email,
+      loginTime: new Date().toISOString()
+    };
+
+    if (remember) {
+      localStorage.setItem("jerseyUser", JSON.stringify(user));
+    } else {
+      sessionStorage.setItem("jerseyUser", JSON.stringify(user));
+    }
+
+    loginMsg.textContent = "";
+    alert("Login successful!");
+    window.location.href = "shop.html";
+  });
+</script>
+
+
+</body>
+</html>

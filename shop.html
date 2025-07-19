@@ -1,0 +1,90 @@
+<html>
+  <title>Shop - The Jersey Vault</title>
+  <link rel="stylesheet" href="style.css">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+</head>
+<body>
+   <header>
+  <div class="brand">
+    <img src="assets/img/logo.png" alt="Logo">
+    <h1>SHOP</h1>
+  </div>
+  <div>
+    <nav><a href="index.html">Home</a>
+      <a href="shop.html" class="active">Shop</a>
+      <a href="cart.html">Cart</a>
+      <a href="checkout.html">Checkout</a>
+    </nav>
+  </div> 
+  </header>
+
+  <section class="filters">
+  <select id="clubFilter">
+    <option value="">All Clubs</option>
+    <option value="Real Madrid">Real Madrid</option>
+    <option value="Barcelona">Barcelona</option>
+    <!-- Add more clubs -->
+  </select>
+  <select id="priceFilter">
+    <option value="">All Prices</option>
+    <option value="low">Below GH₵100</option>
+    <option value="mid">GH₵100 - GH₵200</option>
+    <option value="high">Above GH₵200</option>
+  </select>
+</section>
+
+ 
+  <main class="shop-grid">
+    <!-- Example Product -->
+    <div class="product-card">
+      <img src="assets/img/jersey3a.jpg" alt="Jersey 1">
+      <h3>Real Madrid Home 2024</h3>
+      <p>GH₵130.00</p>
+      <button class="shop-btn">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="assets/img/jersey2a.jpg" alt="Jersey 2">
+      <h3>Barcelona Away 2024</h3>
+      <p>GH₵130.00</p>
+      <button class="shop-btn">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="assets/img/jersey1a.jpg" alt="Jersey 1">
+      <h3>Real Madrid Home 2024</h3>
+      <p>GH₵130.00</p>
+      <button class="shop-btn">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="assets/img/jersey1a.jpg" alt="Jersey 2">
+      <h3>Barcelona Away 2024</h3>
+      <p>GH₵130.00</p>
+      <button class="shop-btn">Add to Cart</button>
+    </div>
+
+    <!-- Add more products below -->
+  </main>
+    
+  <footer>
+    <p>&copy; The Jersey Vault,2025</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+  const user = localStorage.getItem("jerseyUser");
+  if (!user) {
+    alert("You must be logged in to access this page.");
+    window.location.href = "login.html";
+  }
+</script>
+
+
+
+</body>
+</html>

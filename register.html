@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Register | The Jersey Vault</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="auth-wrapper">
+    <main class="auth">
+      <h2>Register</h2>
+      <form id="register-form">
+        <input type="text" placeholder="Full Name" name="fullname" required />
+        <input type="email" placeholder="Email Address" name="email" required />
+        <input type="password" placeholder="Password (min 6 chars)" name="password" required />
+        <div id="password-msg" style="font-size: 0.8rem; color: #c00;"></div>
+        <button type="submit" class="btn">Register</button>
+      </form>
+      <p>Already have an account? <a href="login.html">Login</a></p>
+    </main>
+  </div>
+
+  <script>
+    document.getElementById("register-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const fullName = this.fullname.value.trim();
+      const email = this.email.value.trim();
+      const password = this.password.value;
+
+      const passwordMsg = document.getElementById("password-msg");
+
+      // Basic email format check
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      // Password validation: min 6 chars, 1 number, 1 uppercase
+      const strongPassword = password.length >= 6 &&
+                              /[A-Z]/.test(password) &&
+                              /\d/.test(password);
+
+      if (!emailRegex.test(email)) {
+        passwordMsg.textContent = "Please enter a valid email address.";
+        return;
+      }
+
+      if (!strongPassword) {
+        passwordMsg.textContent = "Password must be at least 6 characters, include a number and an uppercase letter.";
+        return;
+      }
+
+      passwordMsg.textContent = ""; // Clear any message
+      alert("Registration successful!");
+      window.location.href = "shop.html";
+    });
+  </script>
+</body>
+</html>
